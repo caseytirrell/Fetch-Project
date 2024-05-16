@@ -17,6 +17,7 @@
 		5D8758212BF26A1E00B49E2B /* Meals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8758202BF26A1E00B49E2B /* Meals.swift */; };
 		5D8758232BF26A3D00B49E2B /* MealsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8758222BF26A3D00B49E2B /* MealsView.swift */; };
 		5D8758252BF26A4900B49E2B /* MealsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8758242BF26A4900B49E2B /* MealsViewModel.swift */; };
+		5D8758282BF59E2B00B49E2B /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8758272BF59E2A00B49E2B /* StartView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		5D8758222BF26A3D00B49E2B /* MealsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsView.swift; sourceTree = "<group>"; };
 		5D8758242BF26A4900B49E2B /* MealsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsViewModel.swift; sourceTree = "<group>"; };
 		5D8758262BF2BE4900B49E2B /* Fetch-Project-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Fetch-Project-Info.plist"; sourceTree = SOURCE_ROOT; };
+		5D8758272BF59E2A00B49E2B /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				5D8757F72BF262F300B49E2B /* ContentView.swift */,
 				5D8757F92BF262F600B49E2B /* Assets.xcassets */,
 				5D8757FB2BF262F600B49E2B /* Preview Content */,
+				5D8758272BF59E2A00B49E2B /* StartView.swift */,
 			);
 			path = "Fetch Project";
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 				5D8758212BF26A1E00B49E2B /* Meals.swift in Sources */,
 				5D8757F82BF262F300B49E2B /* ContentView.swift in Sources */,
 				5D8757F62BF262F300B49E2B /* Fetch_ProjectApp.swift in Sources */,
+				5D8758282BF59E2B00B49E2B /* StartView.swift in Sources */,
 				5D8758252BF26A4900B49E2B /* MealsViewModel.swift in Sources */,
 				5D8758232BF26A3D00B49E2B /* MealsView.swift in Sources */,
 			);

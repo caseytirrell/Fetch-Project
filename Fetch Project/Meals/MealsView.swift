@@ -22,6 +22,7 @@ struct YoutubePlayer: UIViewRepresentable {
 
 struct MealsView: View {
     @ObservedObject var viewModel: MealsViewModel
+    
     @State private var selectedMealID: String?
 
     var body: some View {
@@ -30,14 +31,27 @@ struct MealsView: View {
                 LinearGradient(gradient: Gradient(colors: [Color("fetchYellow"), Color("fetchOrange")]), startPoint: .top, endPoint: .bottom)
                     .edgesIgnoringSafeArea(.all)
                 VStack(spacing: 10) {
-                    Text("Desserts!")
-                        .font(.largeTitle)
+                    
+                    Image("fetchLogo")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 100, height: 100)
+                        .padding(.bottom, 20)
+                    
+                    Spacer()
+                    
+                    Text("Fetch Desserts!")
+                        .font(.title)
                         .fontWeight(.bold)
                         .foregroundColor(Color.white)
-                        .padding(.vertical, 15)
-                        .padding(.horizontal, 15)
+                        .padding(.vertical, 10)
+                        .padding(.horizontal, 10)
                         .background(
-                            LinearGradient(gradient: Gradient(colors: [Color("fetchPurple"), Color.purple.opacity(0.9)]), startPoint: .topLeading, endPoint: .bottomTrailing)
+                            LinearGradient(gradient: Gradient(colors: [
+                                Color("fetchPurple").opacity(1.0),
+                                Color("fetchPurple").opacity(0.9),
+                                Color("fetchPurple").opacity(0.8)
+                            ]), startPoint: .topLeading, endPoint: .bottomTrailing)
                         )
                         .cornerRadius(10)
                         .shadow(color: Color("fetchPurple").opacity(0.5), radius: 10, x: 0, y: 4)
@@ -52,15 +66,37 @@ struct MealsView: View {
                                 await viewModel.fetchMealsDetails(id: meal.idMeal)
                             }
                         }) {
-                            Text(meal.strMeal)
-                                .foregroundColor(Color.white)
-                                .font(.headline)
-                                .fontWeight(.bold)
-                                .padding()
-                                .frame(maxWidth: .infinity, alignment: .center)
-                                .background(LinearGradient(gradient: Gradient(colors: [Color("fetchPurple"), Color.purple.opacity(0.9)]), startPoint: .leading, endPoint: .trailing))
-                                .cornerRadius(10)
-                                .shadow(radius: 3)
+                            HStack {
+                                AsyncImage(url: meal.strMealThumb) { image in
+                                    image.resizable()
+                                } placeholder: {
+                                    Color.gray
+                                }
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 50, height: 50)
+                                .cornerRadius(12)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 12)
+                                        .stroke(Color("fetchPurple"), lineWidth: 1)
+                                )
+                                .shadow(radius: 5)
+                                
+                                Text(meal.strMeal)
+                                    .foregroundColor(Color.white)
+                                    .font(.system(size: 16))
+                                    .fontWeight(.bold)
+                                    .padding()
+                                    .frame(maxWidth: .infinity, alignment: .center)
+                                    .background(
+                                        LinearGradient(gradient: Gradient(colors: [
+                                            Color("fetchPurple").opacity(1.0),
+                                            Color("fetchPurple").opacity(0.9),
+                                            Color("fetchPurple").opacity(0.8)
+                                        ]), startPoint: .topLeading, endPoint: .bottomTrailing)
+                                    )
+                                    .cornerRadius(10)
+                                    .shadow(radius: 3)
+                            }
                         }
                         .listRowBackground(Color.clear)
                         .buttonStyle(PlainButtonStyle())
@@ -98,13 +134,19 @@ struct MealDetailsView: View {
                     .padding(.vertical, 15)
                     .padding(.horizontal, 15)
                     .background(
-                        LinearGradient(gradient: Gradient(colors: [Color("fetchPurple"), Color.purple.opacity(0.8)]), startPoint: .topLeading, endPoint: .bottomTrailing)
+                        LinearGradient(gradient: Gradient(colors: [
+                            Color("fetchPurple").opacity(1.0),
+                            Color("fetchPurple").opacity(0.9),
+                            Color("fetchPurple").opacity(0.8)
+                        ]), startPoint: .topLeading, endPoint: .bottomTrailing)
+                        
                     )
                     .cornerRadius(10)
                     .shadow(color: Color("fetchPurple").opacity(0.5), radius: 10, x: 0, y: 4)
                     .frame(maxWidth: .infinity)
                     .multilineTextAlignment(.center)
                     .padding(.bottom, 5)
+                    .padding(.top, 5)
             }
             
             ScrollView {
@@ -130,7 +172,14 @@ struct MealDetailsView: View {
                         .foregroundColor(Color.white)
                         .padding(.vertical, 5)
                         .padding(.horizontal, 20)
-                        .background(Color("fetchPurple"))
+                        .background(
+                            LinearGradient(gradient: Gradient(colors: [
+                                Color("fetchPurple").opacity(1.0),
+                                Color("fetchPurple").opacity(0.9),
+                                Color("fetchPurple").opacity(0.8)
+                            ]), startPoint: .topLeading, endPoint: .bottomTrailing)
+                            
+                        )
                         .cornerRadius(10)
                         .shadow(radius: 3)
                     
@@ -139,7 +188,14 @@ struct MealDetailsView: View {
                         .foregroundColor(Color.white)
                         .padding(.vertical, 5)
                         .padding(.horizontal, 20)
-                        .background(Color("fetchPurple"))
+                        .background(
+                            LinearGradient(gradient: Gradient(colors: [
+                                Color("fetchPurple").opacity(1.0),
+                                Color("fetchPurple").opacity(0.9),
+                                Color("fetchPurple").opacity(0.8)
+                            ]), startPoint: .topLeading, endPoint: .bottomTrailing)
+                            
+                        )
                         .cornerRadius(10)
                         .shadow(radius: 3)
 
@@ -148,9 +204,17 @@ struct MealDetailsView: View {
                         .foregroundColor(Color.white)
                         .padding(.vertical, 5)
                         .padding(.horizontal, 20)
-                        .background(Color("fetchPurple"))
+                        .background(
+                            LinearGradient(gradient: Gradient(colors: [
+                                Color("fetchPurple").opacity(1.0),
+                                Color("fetchPurple").opacity(0.9),
+                                Color("fetchPurple").opacity(0.8)
+                            ]), startPoint: .topLeading, endPoint: .bottomTrailing)
+                            
+                        )
                         .cornerRadius(10)
                         .shadow(radius: 3)
+                        .padding(.bottom , 5)
                     
                 }
                 
@@ -167,6 +231,7 @@ struct MealDetailsView: View {
                         .bold()
                         .foregroundColor(Color("fetchPurple"))
                         .padding(.bottom, 5)
+                        .padding(.top, 5)
                     HStack(spacing: 0) {
                         Text("\(mealDetails.strInstructions)")
                             .font(.caption)

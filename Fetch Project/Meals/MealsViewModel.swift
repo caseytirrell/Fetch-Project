@@ -13,6 +13,7 @@ class MealsViewModel: ObservableObject {
     @Published var mealDetails: MealDetails?
     @Published var isLoading = false
     
+    //To fetch list of all desserts
     func fetchMeals() async {
         DispatchQueue.main.async {
             self.isLoading = true
@@ -41,6 +42,7 @@ class MealsViewModel: ObservableObject {
         }
     }
 
+    //to fetch list of specific dessert details
     func fetchMealsDetails(id: String) async {
         DispatchQueue.main.async {
             self.isLoading = true

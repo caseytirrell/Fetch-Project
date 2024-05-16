@@ -8,6 +8,7 @@
 import SwiftUI
 import WebKit
 
+//Youtube player to play the youtube video URLs for the meal details
 struct YoutubePlayer: UIViewRepresentable {
     var videoURL: URL
     

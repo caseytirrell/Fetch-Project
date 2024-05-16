@@ -22,7 +22,6 @@ struct MealsResponse: Decodable {
     let meals: [Meal]
 }
 
-
 struct MealDetails: Identifiable, Decodable {
     let idMeal: String
     let strMeal: String
